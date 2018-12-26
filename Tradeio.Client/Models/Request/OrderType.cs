@@ -13,16 +13,6 @@
         /// <summary>
         /// Market order.
         /// </summary>
-        Market,
-
-        /// <summary>
-        /// Stop limit order.
-        /// </summary>
-        StopLimit,
-
-        /// <summary>
-        /// Stop market order.
-        /// </summary>
-        StopMarket,
+        Market
     }
 }
