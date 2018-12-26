@@ -22,7 +22,7 @@
         /// <summary>
         /// Gets base URL for the API.
         /// </summary>
-        private readonly string baseUrl = "https://api.dev1env.trade.io/api/v1";
+        private readonly string baseUrl = "https://api.exchange.trade.io/api/v1";
 
         /// <summary>
         /// HTTP client instance.
