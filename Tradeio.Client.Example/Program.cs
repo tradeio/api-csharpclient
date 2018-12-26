@@ -9,7 +9,7 @@ namespace Tradeio.Client.Test
     {
         static void Main(string[] args)
         {
-            TradeioApi api = new TradeioApi("aaaaaaaa-1315-4946-ae5a-d8a11352b2ca", "aaaaaaaa-f552-49fa-8160-7fa3efaf3c76");
+            TradeioApi api = new TradeioApi("aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", "aaaaaaaa-bbbb-cccc-dddd-eeeeeeee");
             string symbol = "btc_usdt";
             Console.WriteLine("******PAIRS******");
             PairsResponse pairsResponse = api.GetPairs().Result;
