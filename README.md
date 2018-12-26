@@ -1,6 +1,6 @@
 # Tradeio client (C#)
 
-* Official documentations: **https://gitlab.com/trade-io/official-api-docs**
+* Official documentations: **https://github.com/tradeio/exchange-api-doc**
 
 ### Create connector
 TradeioApi api = new TradeioApi("public_key", "private_key");
