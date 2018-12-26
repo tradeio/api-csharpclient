@@ -32,18 +32,8 @@
         BitcoinCash = 4,
 
         /// <summary>
-        /// <a href="https://www.openpay.mx">OpenPay.</a>
-        /// </summary>
-        OpenPay = 5,
-
-        /// <summary>
         /// Omi payment.
         /// </summary>
-        Omni = 6,
-
-        /// <summary>
-        /// Payment system for transactions to Liquidity pool.
-        /// </summary>
-        LiquidityPool = 7,
+        Omni = 6
     }
 }
