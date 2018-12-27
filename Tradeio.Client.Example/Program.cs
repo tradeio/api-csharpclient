@@ -65,8 +65,8 @@ namespace Tradeio.Client.Test
                 Console.WriteLine($"{order.Side} {order.Instrument} for {order.Price}. Filled: {order.UnitsFilled}");
             }
             Console.WriteLine("******CLOSED ORDERS******");
-            OrdersResponse closeOrdersResponse = api.GetClosedOrders(symbol, UnixTime.Get(DateTime.UtcNow.AddDays(-1)), UnixTime.Get(DateTime.UtcNow)).Result;
-            foreach (OrderInfoResponse order in closeOrdersResponse.Orders)
+            FilteredResponse<OrderInfoResponse> closeOrdersResponse = api.GetClosedOrders(symbol, UnixTime.Get(DateTime.UtcNow.AddDays(-1)), UnixTime.Get(DateTime.UtcNow)).Result;
+            foreach (OrderInfoResponse order in closeOrdersResponse.Data)
             {
                 Console.WriteLine($"{order.Side} {order.Instrument} for {order.Price}. Filled: {order.UnitsFilled}. Status: {order.Status}");
             }

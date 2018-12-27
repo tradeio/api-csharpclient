@@ -135,14 +135,9 @@
             form["Side"] = request.Side.ToString().ToLowerInvariant();
             form["Type"] = request.Type.ToString().ToLowerInvariant();
             form["Quantity"] = request.Quantity;
-            if (request.Type == OrderType.Limit || request.Type == OrderType.StopLimit)
+            if (request.Type == OrderType.Limit)
             {
                 form["Price"] = request.Price;
-            }
-
-            if (request.Type == OrderType.StopLimit || request.Type == OrderType.StopMarket)
-            {
-                form["StopPrice"] = request.StopPrice;
             }
 
             return await this.SignAndSend<OrderResponse>($"/order", form, "POST");
@@ -158,13 +153,14 @@
             return await this.SignAndSend<OrdersResponse>($"/openOrders/{symbol}", null, "GET");
         }
 
-        public async Task<OrdersResponse> GetClosedOrders(string symbol, long start, long end, int limit = 100)
+        public async Task<FilteredResponse<OrderInfoResponse>> GetClosedOrders(string symbol, long start, long end, int page = 1, int perPage = 20)
         {
             IDictionary<string, object> payload = new Dictionary<string, object>(4);
             payload["start"] = start;
             payload["end"] = end;
-            payload["limit"] = limit;
-            return await this.SignAndSend<OrdersResponse>($"/closedOrders/{symbol}", payload, "GET");
+            payload["page"] = page;
+            payload["perPage"] = perPage;
+            return await this.SignAndSend<FilteredResponse<OrderInfoResponse>>($"/closedOrders/{symbol}", payload, "GET");
         }
 
         public async Task<AccountBalanceResponse> GetAccount()
