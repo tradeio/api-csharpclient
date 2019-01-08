@@ -18,7 +18,7 @@
         /// <summary>
         /// Gets or sets recent trade's unique identifier.
         /// </summary>
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the price of the performed trade.
