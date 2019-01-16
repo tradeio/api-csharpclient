@@ -17,7 +17,7 @@ TickerResponse tickerResponse = api.GetTicker("btc_usdt").Result;
 ### Recent trades
 TradesResponse tradesResponse = api.GetRecentTrades("btc_usdt", 20).Result;
 
-## Pravate methods. (not working without auth, needs public and pravete key
+## Private methods. (Do not work without auth, need public and private key)
 ### Current balances
 AccountBalanceResponse accountBalance = api.GetAccount().Result;
 ### Open orders
